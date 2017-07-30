@@ -1,29 +1,33 @@
 import React, {Component} from 'react';
+import Paper from 'material-ui/Paper';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
 
 class Header extends Component {
   render() {
+
+    const style = {
+      display: 'inline-block',
+      margin: '16px 32px 16px 0',
+    };
+    const divBackgroundColor = {
+      background-color: 'blue'
+    };
+
     return (
-      <div className="App-header">
-        <h1 className='HeaderName'>Nachum Freedman</h1>
- 
-        <div className=' HeaderButtons '>
-          <a href='#/home'>
-            <button className="btn btn-warning ButtonBarLeft">Home</button>
-          </a>
-          <a href='#/blog'>
-            <button className="btn btn-warning ButtonBar">Blog</button>
-          </a>
-          <a href='#/work'>
-            <button className="btn btn-warning ButtonBar">Work</button>
-          </a>
-          <a href='#/about'>
-            <button className="btn btn-warning ButtonBarRight">About</button>
-          </a>
-        </div>
+      <div style={divBackgroundColor}>
+        <Paper style={style}>
+          <Menu>
+            <MenuItem primaryText="Home" href='#/home' />
+            <MenuItem primaryText="Blog" href='#/blog' />
+            <MenuItem primaryText="Work" href='#/work' />
+            <MenuItem primaryText="About" href='#/abouts' />
+          </Menu>
+        </Paper>
       </div>
     )
   }
 }
+
 export default Header;

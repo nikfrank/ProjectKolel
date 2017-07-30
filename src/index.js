@@ -8,10 +8,9 @@ import createHashHistory from 'history/createHashHistory';
 import Layout from './Layout';
 import Work from './Work';
 import About from './About';
-import { bootApp } from 'tahini';
 import Home from './Home';
 
-const app = bootApp();
+
 const history = createHashHistory();
 
 
