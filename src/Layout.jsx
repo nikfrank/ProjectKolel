@@ -11,6 +11,7 @@ class Layout extends Component {
           <Header/>
         </MuiThemeProvider>
         {this.props.children}
+
       </div>
     )
   }

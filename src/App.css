@@ -1,12 +1,6 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
   background-color: #4E91F0;
   display: flex;
@@ -50,10 +44,6 @@ div.HeaderButtons {
 }
 .ButtonBar {
   border-radius: 0;
-}
-.GraffitIMG {
-  width: 10vw;
-  height: auto;
 }
 .ImgDiv {
   transform: rotate(180deg);
