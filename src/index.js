@@ -13,18 +13,21 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
 const history = createHashHistory();
-const home = <MuiThemeProvider><Home/></MuiThemeProvider>
 
 ReactDOM.render(
   <Router history={history}>
-    <Layout>
-      <Switch>
-        <Route path='/blog' component={Blog}/>
-        <Route path='/home' component={home}/>
-        <Route path='/work' component={Work}/>
-        <Route path='/about' component={About}/>
-        <Redirect from="/" to="/home" />
-      </Switch>
+
+    <MuiThemeProvider>
+      <Layout>
+        <Switch>
+          <Route path='/blog' component={Blog}/>
+          <Route path='/home' component={Home}/>
+          <Route path='/work' component={Work}/>
+          <Route path='/about' component={About}/>
+          <Redirect from="/" to="/home" />
+        </Switch>
     </Layout>
+  </MuiThemeProvider>
+
   </Router>, document.getElementById('root'));
   registerServiceWorker();

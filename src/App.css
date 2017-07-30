@@ -8,7 +8,6 @@
   padding: 20px;
   color: white;
 }
-
 .App-intro {
   font-size: large;
 }
@@ -47,4 +46,12 @@ div.HeaderButtons {
 }
 .ImgDiv {
   transform: rotate(180deg);
+}
+.homeGridHeader{
+  font-weight: 5000;
+}
+
+.homeTile:hover {
+  background-color: grey;
+  cursor: pointer;
 }
