@@ -4,21 +4,23 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import Subheader from 'material-ui/Subheader';
 import FaCompass from 'react-icons/lib/fa/compass';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
+import PropTypes from 'prop-types';
 
 const homeGridStyles = {
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
+    position: 'absolute',
     justifyContent: 'space-around',
+    minWidth: '20vw',
+    marginLeft: '20%',
+    flexFlow: 'row rap',
   },
   gridList: {
-    width: 500,
-    height: 450,
     overflowY: 'auto',
   },
 };
 
-const tilesData = [
+const tile = [
   {
     img: 'public/unnamed.png',
     title: 'Mishna',
@@ -64,11 +66,11 @@ const tilesData = [
     title: "Revach L'daf",
   },
   {
-    Icon: 'FaPlayCircleO',
+    Icon: FaPlayCircleO,
     title: 'Podcasts',
   },
   {
-    Icon: 'FaCompass',
+    Icon: FaCompass,
     title: 'Navigator',
   },
   {
@@ -103,7 +105,7 @@ const tilesData = [
 
 class Home extends Component {
   render() {
-
+    console.log(this.context.width);
 
     return (
       <div>
@@ -111,29 +113,33 @@ class Home extends Component {
           <GridList
             cellHeight={180}
             style={homeGridStyles.gridList}
+            className='tileList'
+            cols={this.context.width > 768 ? 5 : 2}
             >
             <Subheader>
               <div className='homeGridHeader'>
-                THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
+                /*THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
                 REBBETZIN HENIE MEISELS AND HER MOTHER REBBETZIN HINDA TRESS OB"M
                 THE MORDECAI (MARCUS) BEN ELIMELECH SHMUEL KORNFELD
-                MASECHES SANHEDRIN
+                MASECHES SANHEDRIN*/
               </div>
               <div>
-                Sunday's Daf is	יד	(14)
+                /*Sunday's Daf is	יד	(14)
                 SANEHDRIN 14 (7 Av) - Dedicated in memory of Dr. Simcha
                 Bekelnitzky (Simcha Gedalya ben Shraga Feibush) of Queens, N.Y.,
                 Niftar 7 Av 5757, by his wife and daughters. G-d-fearing and
                 knowledgeable, Simcha was well known in the community for his
-                Chesed and Tzedakah. He will long be remembered.
+                Chesed and Tzedakah. He will long be remembered.*/
               </div>
             </Subheader>
-            {tilesData.map(({ title, img, Icon, }) => (
-              <a href="#/about">
+            {tile.map(({ title, img, Icon, }) => (
+              <a className='tileA' href="#/about">
                 <GridTile
-                  title={tile.title}
-                  className='homeTile'>
-                  <div>{img ? (<img src={img}/> : <Icon/>}</div>
+                  title={title}
+                  className='homeTile'
+                  cols={.5}
+                  >
+                  <div className='imageCSS'>{img ? (<img src={img} alt=''/>) : <Icon/>}</div>
                 </GridTile>
               </a>
             ))}
@@ -143,5 +149,7 @@ class Home extends Component {
     );
   }
 }
-
+Home.contextTypes = {
+  width: PropTypes.number
+};
 export default Home;

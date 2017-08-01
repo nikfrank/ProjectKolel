@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import Header from './Header';
+import HeaderMobile from './HeaderMobile';
 
 
 class Layout extends Component {
   render() {
     return (
       <div>
-        {this.props.children}
-        <Header/>
-
+        <HeaderMobile/>
+          {this.props.children}
       </div>
     )
   }
