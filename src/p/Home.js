@@ -27,7 +27,7 @@ class Home extends Component {
 
     const pageWidth = (this.context.width < 800) ?
                       'calc( 100vw - 60px )' :
-                      'calc( 100vw - '+(DRAWER_WIDTH + 65)+'px )';
+                      'calc( 100vw - '+(DRAWER_WIDTH + 75)+'px )';
     
     const homeGridStyles = {
       root: {
@@ -37,7 +37,7 @@ class Home extends Component {
         width: pageWidth,
         marginLeft: (this.context.width < 800) ? 30 :
                     (this.context.width < 900) ? DRAWER_WIDTH + 51 :
-                    DRAWER_WIDTH + 50,
+                    DRAWER_WIDTH + 40,
         
         flexFlow: 'column',
       },
