@@ -36,10 +36,23 @@ class Home extends Component {
     
     return (
       <div>
-        <img src={bannerImg} style={{ width: 'auto',
-                                      height: '200px',
-                                      display: 'block',
-                                      margin: '0 auto'}}/>
+        <div className="banner-container">
+          <img src={bannerImg} style={{ width: 'auto',
+                                        height: '170px',
+                                        display: 'block',
+                                        margin: '0 auto'}}/>
+          blah blah blah
+        </div>
+
+        <div className="subheader-container">
+          <div className="subheader-container-left">
+            left
+          </div>
+          <div className="subheader-container-right">
+            right
+          </div>
+        </div>
+        
         <div style={homeGridStyles.root}>
           
 
