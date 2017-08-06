@@ -2,34 +2,42 @@ import FaCompass from 'react-icons/lib/fa/compass';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 
 
-import mishna from '../imgs/mishna.png';
-const imgs = {
-  mishna,
-};
+import {  
+  bwAskkollel,
+  bwBackground,
+  bwEngCharts,
+  bwFullreview,
+  bwInsights,
+  bwMembersSite,
+  bwMishna,
+  bwQA,
+  bwTalmud,
+} from '../imgs/';
+
 
 export default [
   {
-    img: imgs.mishna,
+    img: bwMishna,
     title: 'Mishna',
   },
   {
-    img: 'images/grid-list/burger-827309_640.jpg',
+    img: bwInsights,
     title: 'Insights',
   },
   {
-    img: 'images/grid-list/camera-813814_640.jpg',
+    img: bwBackground,
     title: 'Background',
   },
   {
-    img: 'images/grid-list/morning-819362_640.jpg',
+    img: bwQA,
     title: 'Review Q&A',
   },
   {
-    img: 'images/grid-list/hats-829509_640.jpg',
+    img: bwFullreview,
     title: 'Full Review',
   },
   {
-    img: 'images/grid-list/honey-823614_640.jpg',
+    img: bwEngCharts,
     title: 'English Charts',
   },
   {

@@ -14,6 +14,7 @@ const paperBarStyle = {
   display: 'inline-block',
   margin: '16px 32px 16px 0',
 };
+
 const headerBar = {
   backgroundColor: 'blue',
   maxWidth: '8vw',
@@ -21,8 +22,30 @@ const headerBar = {
   position: 'fixed',
 };
 
-class HeaderMobile extends Component {
+const menuItemStyle = {
+  backgroundColor: '#182963',
+  color: 'white',
+  border: '2px outset gray',
+};
 
+const menuItems = [
+  { title: 'Home', href: '#/home' },
+  { title: 'Sponsors & Donors', href: '#/about' },
+  { title: 'Member\'s site', href: '#/about' },
+  { title: 'Talmud', href: '#/about' },
+  { title: 'Mishna', href: '#/about' },
+  { title: 'Shulchan Aruch', href: '#/about' },
+  { title: 'Lectures', href: '#/about' },
+  { title: 'שיעורים בעברית', href: '#/about' },
+  { title: 'Oders', href: '#/about' },
+  { title: 'Dafyomi Central', href: '#/about' },
+  { title: 'Kollel Iyun Hadaf', href: '#/about' },
+  { title: 'Feedback', href: '#/about' },
+  { title: 'Ask A Question on the Daf', href: '#/about'},
+];
+
+
+class HeaderMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {open: false};
@@ -38,18 +61,27 @@ class HeaderMobile extends Component {
         {
           this.context.width > 800 ? null :          
           <RaisedButton
-              className="hover-menu-icon-button"
-              style={{ position: 'fixed', zIndex: 1330, left: 0, top: 0 }}
+              style={{
+                position: 'fixed',
+                zIndex: 1330,
+                left: 0,
+                top: 0,
+              }}
+              buttonStyle={{
+                ...menuItemStyle,
+                borderRight: 'none',
+                borderBottom: 'none',
+              }}
               onTouchTap={this.handleToggle}>
             
             <CloseMenuIcon style={{
               transition: 'all 1s ease',
-              color: !this.state.open ? seethrough : 'black'
+              color: !this.state.open ? seethrough : 'white'
             }}/>
             <MenuIcon/>
             <OpenMenuIcon style={{
               transition: 'all 1s ease',
-              color: this.state.open ? seethrough : 'black'
+              color: this.state.open ? seethrough : 'white'
             }}/>
             
           </RaisedButton>
@@ -59,22 +91,22 @@ class HeaderMobile extends Component {
                 width={DRAWER_WIDTH}>
           {
             this.context.width > 800 ? null :
-            <MenuItem style={{ cursor: 'default', pointerEvents:'none' }}/>
+            <MenuItem style={{
+              cursor: 'default',
+              pointerEvents:'none',
+              ...menuItemStyle,
+            }}/>
+          }
+
+          {
+            menuItems.map((m, i)=> (
+              <MenuItem key={i}
+                        primaryText={m.title}
+                        style={menuItemStyle}
+                        href={m.href}/>
+            ) )
           }
           
-          <MenuItem primaryText="Home" href='#/home' />
-          <MenuItem primaryText="Sponsors & Donors" href='#/about' />
-          <MenuItem primaryText="Memeber's site" href='#/about' />
-          <MenuItem primaryText="Talmud" href='#/about' />
-          <MenuItem primaryText="Mishna" href='#/about' />
-          <MenuItem primaryText="Shulchan Aruch" href='#/about' />
-          <MenuItem primaryText="Lectures" href='#/about' />
-          <MenuItem primaryText="שיעורים בעברית" href='#/about' />
-          <MenuItem primaryText="Oders" href='#/about' />
-          <MenuItem primaryText="Dafyomi Central" href='#/about' />
-          <MenuItem primaryText="Kollel Iyun Hadaf" href='#/about' />
-          <MenuItem primaryText="Feedback" href='#/about' />
-          <MenuItem primaryText="Ask A Question on the Daf" href='#/about'/>
         </Drawer>
       </div>
 
