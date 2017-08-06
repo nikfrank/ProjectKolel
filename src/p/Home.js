@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import {GridList, GridTile} from 'material-ui/GridList';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import SearchIcon from 'react-icons/lib/md/search';
+
 import Subheader from 'material-ui/Subheader';
 import PropTypes from 'prop-types';
 
@@ -24,8 +27,8 @@ class Home extends Component {
   }
 
   render() {
-
-    const pageWidth = (this.context.width < 800) ?
+    const pageWidth = (this.context.width < 500) ? 'calc( 100vw - 50px)' :
+                      (this.context.width < 800) ?
                       'calc( 100vw - 60px )' :
                       'calc( 100vw - '+(DRAWER_WIDTH + 75)+'px )';
     
@@ -46,6 +49,10 @@ class Home extends Component {
       },
     };
 
+    const gridCols = this.context.width < 600 ? 2 :
+                     this.context.width < 900 ?
+                     3 : 5;
+    
     
     return (
       <div>
@@ -54,10 +61,13 @@ class Home extends Component {
                       flexWrap:'wrap'}}>          
           <div style={{ 
             display: 'block',
-            margin: '0 0 0 '+((this.context.width < 800) ? '10vw' : '30vw'),
+            margin: '0 0 0 '+((this.context.width < 500) ? 0 :
+                              (this.context.width < 800) ?
+                              '10vw' : '30vw'),
             textAlign: 'center',
           }}>
             <img src={bannerImg} style={{ width: 'auto',
+                                          maxWidth: '80vw',
                                           height: '170px',}}/>
             <h3>The Internet Center for the Study of Talmud</h3>
             <i>brought to you by <a href="/">Kollel Iyun Hadaf</a></i>
@@ -86,7 +96,7 @@ class Home extends Component {
                 cellHeight={180}
                 style={homeGridStyles.gridList}
                 className='tileList'
-                cols={this.context.width > 900 ? 5 : 3}>
+                cols={gridCols}>
 
               <Subheader style={{
                 padding: 0,
@@ -137,8 +147,7 @@ class Home extends Component {
           
           <div style={{backgroundColor: 'white'}}>
             <TextField
-                hintText="Hint Text"
-                floatingLabelText="Floating Label Text"
+                floatingLabelText="Search Dafyomi from Google!"
                 onChange={this.googleTextChanged}/>
             <a target="_blank"
                href={'https://www.google.co.il/search?q='+
@@ -146,7 +155,9 @@ class Home extends Component {
                        this.state.googleText+
                        ' site:http://dafyomi.co.il'
                      )}>
-              <button>Search Dafyomi from Google!</button>
+              <FloatingActionButton style={{}}>
+                <SearchIcon />
+              </FloatingActionButton>
             </a>
           </div>
         </div>

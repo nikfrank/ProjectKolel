@@ -54,7 +54,7 @@ div.HeaderButtons {
   max-height: 10vw;
   max-width: 10vw;
   margin-right: 0;
-  min-width: 150px;
+  min-width: 120px;
   min-height: 150px;
 }
 .homeTile:hover {
