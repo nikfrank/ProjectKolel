@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import tiles from './homeTiles';
 
 import bannerImg from '../imgs/main-20yr.png';
+import { calendarPeek } from '../imgs';
 
 const DRAWER_WIDTH = 225;
 
@@ -38,20 +39,33 @@ class Home extends Component {
     
     return (
       <div>
-        <div className="banner-container">
-          <img src={bannerImg} style={{ width: 'auto',
-                                        height: '170px',
-                                        display: 'block',
-                                        margin: '0 auto'}}/>
-          blah blah blah
-        </div>
-
-        <div className="subheader-container">
-          <div className="subheader-container-left">
-            left
+        <div style={{ display: 'flex',
+                      flexDirection:'row',
+                      flexWrap:'wrap'}}>          
+          <div style={{ 
+            display: 'block',
+            margin: '0 0 0 '+((this.context.width < 800) ? '10vw' : '30vw'),
+            textAlign: 'center',
+          }}>
+            <img src={bannerImg} style={{ width: 'auto',
+                                          height: '170px',}}/>
+            <h3>The Internet Center for the Study of Talmud</h3>
+            <i>brought to you by <a href="/">Kollel Iyun Hadaf</a></i>
+            <p><small>Rosh Kollel: Rav Mordecai Kornfeld</small></p>
           </div>
-          <div className="subheader-container-right">
-            right
+
+          <div style={{
+            maxWidth: 120,
+            margin: '60px 0 0 35px',
+            textAlign: 'center',
+          }}>
+            <img src={calendarPeek} style={{
+              width: 120,
+              height: 130,
+            }}/>
+            <a href="/" style={{ display: 'block' }}>
+              Order you FREE Dafyomi calendar!
+            </a>
           </div>
         </div>
         

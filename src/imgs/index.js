@@ -8,6 +8,8 @@ import bwMishna from './bw-mishna.png';
 import bwQA from './bw-q&a.png';
 import bwTalmud from './bw-talmud.png';
 
+import calendarPeek from './5778calendarpeek-big.gif';
+
 export {
   bwAskkollel,
   bwBackground,
@@ -18,4 +20,6 @@ export {
   bwMishna,
   bwQA,
   bwTalmud,
+
+  calendarPeek,
 };
