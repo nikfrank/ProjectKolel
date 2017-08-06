@@ -16,8 +16,8 @@ class Home extends Component {
   render() {
 
     const pageWidth = (this.context.width < 800) ?
-                      'calc( 100vw - 30px )' :
-                      'calc( 100vw - '+(DRAWER_WIDTH + 75)+'px )';
+                      'calc( 100vw - 50px )' :
+                      'calc( 100vw - '+(DRAWER_WIDTH + 95)+'px )';
     
     const homeGridStyles = {
       root: {
@@ -25,7 +25,7 @@ class Home extends Component {
         position: 'absolute',
         justifyContent: 'space-around',
         width: pageWidth,
-        marginLeft: (this.context.width < 800) ? 10 :
+        marginLeft: (this.context.width < 800) ? 30 :
                     (this.context.width < 900) ? DRAWER_WIDTH + 61 :
                     DRAWER_WIDTH + 55,
         
@@ -78,20 +78,33 @@ class Home extends Component {
               className='tileList'
               cols={this.context.width > 900 ? 5 : 3}>
 
-            <Subheader>
-              <div className='homeGridHeader'>
-                /*THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
-                REBBETZIN HENIE MEISELS AND HER MOTHER REBBETZIN HINDA TRESS OB"M
-                THE MORDECAI (MARCUS) BEN ELIMELECH SHMUEL KORNFELD
-                MASECHES SANHEDRIN*/
+            <Subheader style={{
+              padding: 0,
+              backgroundColor: '#92c1ff',
+              borderTopLeftRadius: 5,
+              borderTopRightRadius: 5,
+              textAlign:'center',
+              lineHeight: '1.5em',
+            }}>
+              <div className='homeGridHeader' style={{
+                color: '#808000',
+              }}>
+                <p>
+                  THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
+                  REBBETZIN HENIE MEISELS AND HER MOTHER REBBETZIN HINDA TRESS OB"M
+                </p>
+                <p><b>
+                  THE MORDECAI (MARCUS) BEN ELIMELECH SHMUEL KORNFELD
+                  MASECHES SANHEDRIN
+                </b></p>
               </div>
               <div>
-                /*Sunday's Daf is	יד	(14)
+                Sunday's Daf is	יד	(14)
                 SANEHDRIN 14 (7 Av) - Dedicated in memory of Dr. Simcha
                 Bekelnitzky (Simcha Gedalya ben Shraga Feibush) of Queens, N.Y.,
                 Niftar 7 Av 5757, by his wife and daughters. G-d-fearing and
                 knowledgeable, Simcha was well known in the community for his
-                Chesed and Tzedakah. He will long be remembered.*/
+                Chesed and Tzedakah. He will long be remembered.
               </div>
             </Subheader>
 
