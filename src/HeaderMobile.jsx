@@ -8,6 +8,8 @@ import MenuIcon from 'react-icons/lib/md/menu';
 import CloseMenuIcon from 'react-icons/lib/md/navigate-before';
 import OpenMenuIcon from 'react-icons/lib/md/navigate-next';
 
+const DRAWER_WIDTH = 225;
+
 const paperBarStyle = {
   display: 'inline-block',
   margin: '16px 32px 16px 0',
@@ -53,7 +55,8 @@ class HeaderMobile extends Component {
           </RaisedButton>
         }
         
-        <Drawer open={this.state.open || (this.context.width > 800)}>
+        <Drawer open={this.state.open || (this.context.width > 800)}
+                width={DRAWER_WIDTH}>
           {
             this.context.width > 800 ? null :
             <MenuItem style={{ cursor: 'default', pointerEvents:'none' }}/>

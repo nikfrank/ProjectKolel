@@ -8,14 +8,16 @@ import tiles from './homeTiles';
 
 import bannerImg from '../imgs/main-20yr.png';
 
+const DRAWER_WIDTH = 225;
+
 
 class Home extends Component {
   render() {
 
     const pageWidth = (this.context.width < 800) ?
                       'calc( 100vw - 30px )' :
-                      'calc( 100vw - 300px )';
-          
+                      'calc( 100vw - '+(DRAWER_WIDTH + 75)+'px )';
+    
     const homeGridStyles = {
       root: {
         display: 'flex',
@@ -23,8 +25,8 @@ class Home extends Component {
         justifyContent: 'space-around',
         width: pageWidth,
         marginLeft: (this.context.width < 800) ? 10 :
-                    (this.context.width < 900) ? 286 :
-                    280,
+                    (this.context.width < 900) ? DRAWER_WIDTH + 61 :
+                    DRAWER_WIDTH + 55,
         
         flexFlow: 'row rap',
       },
