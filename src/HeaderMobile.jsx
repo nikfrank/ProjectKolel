@@ -37,9 +37,9 @@ class HeaderMobile extends Component {
           this.context.width > 800 ? null :          
           <RaisedButton
               className="hover-menu-icon-button"
-              style={{ position: 'fixed', zIndex: 1330 }}
-              onTouchTap={this.handleToggle}
-              onClick={this.handleToggle}>
+              style={{ position: 'fixed', zIndex: 1330, left: 0, top: 0 }}
+              onTouchTap={this.handleToggle}>
+            
             <CloseMenuIcon style={{
               transition: 'all 1s ease',
               color: !this.state.open ? seethrough : 'black'
@@ -49,14 +49,14 @@ class HeaderMobile extends Component {
               transition: 'all 1s ease',
               color: this.state.open ? seethrough : 'black'
             }}/>
+            
           </RaisedButton>
         }
         
         <Drawer open={this.state.open || (this.context.width > 800)}>
           {
-            this.context.width <= 800 ?
+            this.context.width > 800 ? null :
             <MenuItem style={{ cursor: 'default', pointerEvents:'none' }}/>
-            : null
           }
           
           <MenuItem primaryText="Home" href='#/home' />

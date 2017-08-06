@@ -13,9 +13,7 @@
     "react-router-dom": "^4.1.1",
     "react-sketch": "^0.3.3",
     "react-tap-event-plugin": "^2.0.1",
-    "tahini": "^1.3.9"
-  },
-  "devDependencies": {
+    "tahini": "^1.3.9",
     "react-scripts": "1.0.10"
   },
   "scripts": {
