@@ -4,13 +4,21 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import { Router, Route, Switch, Redirect } from 'react-router';
 import createHashHistory from 'history/createHashHistory';
-import Layout from './Layout';
-import Work from './Work';
-import About from './About';
-import Home from './Home';
-import Blog from './Blog';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import ResponsiveProvider from './ResponsiveProvider';
+import Layout from './Layout';
+
+import {
+  Work,
+  About,
+  Home,
+  Blog,
+} from './p/'
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 const history = createHashHistory();
 

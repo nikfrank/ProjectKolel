@@ -7,7 +7,7 @@ class Layout extends Component {
     return (
       <div>
         <HeaderMobile/>
-          {this.props.children}
+        {this.props.children}
       </div>
     )
   }

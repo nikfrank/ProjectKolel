@@ -10,7 +10,6 @@ class ResponsiveProvider extends Component {
   }
   componentDidMount(){
     window.addEventListener('resize', () => {
-      console.log(window.innerWidth);
       this.setState({width: window.innerWidth})
     } )
   }

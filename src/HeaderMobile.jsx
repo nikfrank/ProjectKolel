@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import RaisedButton from 'material-ui/RaisedButton';
+import PropTypes from 'prop-types';
+
+import MenuIcon from 'react-icons/lib/md/menu';
+import CloseMenuIcon from 'react-icons/lib/md/navigate-before';
+import OpenMenuIcon from 'react-icons/lib/md/navigate-next';
 
 const paperBarStyle = {
   display: 'inline-block',
@@ -24,14 +29,36 @@ class HeaderMobile extends Component {
   handleToggle = () => this.setState({open: !this.state.open});
 
   render() {
+    const seethrough = 'rgba(0,0,0,0)';
+    
     return (
       <div>
-        <RaisedButton
-          label="Toggle Drawer"
-          onTouchTap={this.handleToggle}
-          onClick={this.handleToggle}
-          />
-        <Drawer open={this.state.open}>
+        {
+          this.context.width > 800 ? null :          
+          <RaisedButton
+              className="hover-menu-icon-button"
+              style={{ position: 'fixed', zIndex: 1330 }}
+              onTouchTap={this.handleToggle}
+              onClick={this.handleToggle}>
+            <CloseMenuIcon style={{
+              transition: 'all 1s ease',
+              color: !this.state.open ? seethrough : 'black'
+            }}/>
+            <MenuIcon/>
+            <OpenMenuIcon style={{
+              transition: 'all 1s ease',
+              color: this.state.open ? seethrough : 'black'
+            }}/>
+          </RaisedButton>
+        }
+        
+        <Drawer open={this.state.open || (this.context.width > 800)}>
+          {
+            this.context.width <= 800 ?
+            <MenuItem style={{ cursor: 'default', pointerEvents:'none' }}/>
+            : null
+          }
+          
           <MenuItem primaryText="Home" href='#/home' />
           <MenuItem primaryText="Sponsors & Donors" href='#/about' />
           <MenuItem primaryText="Memeber's site" href='#/about' />
@@ -51,5 +78,8 @@ class HeaderMobile extends Component {
     )
   }
 }
+HeaderMobile.contextTypes = {
+  width: PropTypes.number
+};
 
 export default HeaderMobile;

@@ -6,6 +6,12 @@ import FaCompass from 'react-icons/lib/fa/compass';
 import FaPlayCircleO from 'react-icons/lib/fa/play-circle-o';
 import PropTypes from 'prop-types';
 
+
+import mishna from '../imgs/mishna.png';
+const imgs = {
+  mishna,
+};
+
 const homeGridStyles = {
   root: {
     display: 'flex',
@@ -22,7 +28,7 @@ const homeGridStyles = {
 
 const tile = [
   {
-    img: 'public/unnamed.png',
+    img: imgs.mishna,
     title: 'Mishna',
   },
   {
@@ -105,17 +111,14 @@ const tile = [
 
 class Home extends Component {
   render() {
-    console.log(this.context.width);
-
     return (
       <div>
         <div style={homeGridStyles.root}>
           <GridList
-            cellHeight={180}
-            style={homeGridStyles.gridList}
-            className='tileList'
-            cols={this.context.width > 768 ? 5 : 2}
-            >
+              cellHeight={180}
+              style={homeGridStyles.gridList}
+              className='tileList'
+              cols={this.context.width > 768 ? 5 : 2}>
             <Subheader>
               <div className='homeGridHeader'>
                 /*THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
@@ -132,17 +135,20 @@ class Home extends Component {
                 Chesed and Tzedakah. He will long be remembered.*/
               </div>
             </Subheader>
-            {tile.map(({ title, img, Icon, }) => (
-              <a className='tileA' href="#/about">
-                <GridTile
-                  title={title}
-                  className='homeTile'
-                  cols={.5}
-                  >
-                  <div className='imageCSS'>{img ? (<img src={img} alt=''/>) : <Icon/>}</div>
-                </GridTile>
-              </a>
-            ))}
+            {
+              tile.map(({ title, img, Icon }, i) => (
+                <a className='tileA' href="#/about" key={i}>
+                  <GridTile
+                      title={title}
+                      className='homeTile'
+                      cols={.5}>
+                    <div className='imageCSS'>
+                      {img ? (<img src={img} alt=''/>) : <Icon/>}
+                    </div>
+                  </GridTile>
+                </a>
+              ))
+            }
           </GridList>
         </div>
       </div>
@@ -152,4 +158,5 @@ class Home extends Component {
 Home.contextTypes = {
   width: PropTypes.number
 };
+
 export default Home;
