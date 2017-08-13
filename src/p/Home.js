@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import './App.css';
-import {GridList, GridTile} from 'material-ui/GridList';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import SearchIcon from 'react-icons/lib/md/search';
-
-import Subheader from 'material-ui/Subheader';
 import PropTypes from 'prop-types';
 
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import SearchIcon from 'react-icons/lib/md/search';
 import TextField from 'material-ui/TextField';
 
-import tiles from './homeTiles';
+import { GridList, GridTile } from 'material-ui/GridList';
+import Subheader from 'material-ui/Subheader';
+
+import GridTray from '../pure/GridTray';
+
+import homeTiles from './homeTiles';
 
 import bannerImg from '../imgs/main-20yr.png';
 import { calendarPeek } from '../imgs';
 
+import './App.css';
+
 const DRAWER_WIDTH = 225;
+
+const yomiTiles = homeTiles.slice(0, 5);
 
 
 class Home extends Component {
@@ -34,31 +39,18 @@ class Home extends Component {
     
     const homeGridStyles = {
       root: {
-        display: 'flex',
-        position: 'absolute',
-        justifyContent: 'space-around',
         width: pageWidth,
         marginLeft: (this.context.width < 800) ? 30 :
                     (this.context.width < 900) ? DRAWER_WIDTH + 51 :
                     DRAWER_WIDTH + 40,
-        
-        flexFlow: 'column',
-      },
-      gridList: {
-        overflowY: 'auto',
-      },
+      }
     };
-
-    const gridCols = this.context.width < 600 ? 2 :
-                     this.context.width < 900 ?
-                     3 : 5;
-    
     
     return (
       <div>
         <div style={{ display: 'flex',
                       flexDirection:'row',
-                      flexWrap:'wrap'}}>          
+                      flexWrap:'wrap'}}>
           <div style={{ 
             display: 'block',
             margin: '0 0 0 '+((this.context.width < 500) ? 0 :
@@ -90,60 +82,46 @@ class Home extends Component {
         </div>
         
         <div style={homeGridStyles.root}>
-          <div>
+          <GridTray width={this.context.width}
+                    tiles={homeTiles}>
+            <div className='homeGridHeader' style={{
+              color: '#808000',
+            }}>
+              <p>
+                THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
+                REBBETZIN HENIE MEISELS AND HER MOTHER REBBETZIN HINDA TRESS OB"M
+              </p>
+              <p><b>
+                THE MORDECAI (MARCUS) BEN ELIMELECH SHMUEL KORNFELD
+                MASECHES SANHEDRIN
+              </b></p>
+            </div>
+            <div>
+              Sunday's Daf is	יד	(14)
+              SANEHDRIN 14 (7 Av) - Dedicated in memory of Dr. Simcha
+              Bekelnitzky (Simcha Gedalya ben Shraga Feibush) of Queens, N.Y.,
+              Niftar 7 Av 5757, by his wife and daughters. G-d-fearing and
+              knowledgeable, Simcha was well known in the community for his
+              Chesed and Tzedakah. He will long be remembered.
+            </div>
+          </GridTray>
 
-            <GridList
-                cellHeight={180}
-                style={homeGridStyles.gridList}
-                className='tileList'
-                cols={gridCols}>
+          <hr/>
+          
+          <GridTray width={this.context.width}
+                    subheaderStyle={{ padding: 10 }}
+                    tiles={yomiTiles}>
+            <b style={{ fontSize: '2em' }}>Yomi Study Links</b>
+          </GridTray>
 
-              <Subheader style={{
-                padding: 0,
-                backgroundColor: '#92c1ff',
-                borderTopLeftRadius: 5,
-                borderTopRightRadius: 5,
-                textAlign:'center',
-                lineHeight: '1.5em',
-              }}>
-                <div className='homeGridHeader' style={{
-                  color: '#808000',
-                }}>
-                  <p>
-                    THE CURRENT SEDER NEZIKIN HAS BEEN DEDICATED לע"נ
-                    REBBETZIN HENIE MEISELS AND HER MOTHER REBBETZIN HINDA TRESS OB"M
-                  </p>
-                  <p><b>
-                    THE MORDECAI (MARCUS) BEN ELIMELECH SHMUEL KORNFELD
-                    MASECHES SANHEDRIN
-                  </b></p>
-                </div>
-                <div>
-                  Sunday's Daf is	יד	(14)
-                  SANEHDRIN 14 (7 Av) - Dedicated in memory of Dr. Simcha
-                  Bekelnitzky (Simcha Gedalya ben Shraga Feibush) of Queens, N.Y.,
-                  Niftar 7 Av 5757, by his wife and daughters. G-d-fearing and
-                  knowledgeable, Simcha was well known in the community for his
-                  Chesed and Tzedakah. He will long be remembered.
-                </div>
-              </Subheader>
 
-              {
-                tiles.map(({ title, img, Icon }, i) => (
-                  <a className='tileA' href="#/about" key={i}>
-                    <GridTile
-                        title={title}
-                        className='homeTile'
-                        cols={.5}>
-                      <div className='imageCSS'>
-                        {img ? (<img src={img} alt=''/>) : <Icon/>}
-                      </div>
-                    </GridTile>
-                  </a>
-                ))
-              }
-            </GridList>
-          </div>
+          <hr/>
+          
+          <GridTray width={this.context.width}
+                    subheaderStyle={{ padding: 10 }}
+                    tiles={yomiTiles.slice(0, 4)}>
+            <b style={{ fontSize: '2em' }}>Reference Library</b>
+          </GridTray>
           
           <div style={{backgroundColor: 'white'}}>
             <TextField

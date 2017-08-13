@@ -47,24 +47,15 @@ div.HeaderButtons {
 .ImgDiv {
   transform: rotate(180deg);
 }
-.homeGridHeader{
-  font-weight: 5000;
-}
+
+/* grid tray styles */
 .homeTile{
-  max-height: 10vw;
-  max-width: 10vw;
+  max-height: 18vh;
   margin-right: 0;
   min-width: 120px;
-  min-height: 150px;
+  text-align: center;
 }
 .homeTile:hover {
   background-color: grey;
   cursor: pointer;
 }
-.tileList {
-  flex-grow: unset;
-}
-.imgCSS {
-  width: 1000vw
-}
-
