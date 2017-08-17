@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import './Work.css'
+import './Mishna.css'
 
-class Work extends Component {
+class Mishna extends Component {
   render() {
     return (
       <div className="App">
         <button className='WrokBox btn btn-warning'>
           <div className='ImgDiv'>
             <img src='./graffit.JPG'
-              alt="Graffit App"
-              className='GraffitIMG'/>
+                 alt="Graffit App"
+                 className='GraffitIMG'/>
           </div>
           <div className='WorkBoxHeader'>Graffit</div>
         </button>
@@ -17,8 +17,8 @@ class Work extends Component {
         <button className='WrokBox btn btn-warning'>
           <div className='ImgDiv'>
             <img src='./graffit.JPG'
-              alt="Graffit App"
-              className='GraffitIMG'/>
+                 alt="Graffit App"
+                 className='GraffitIMG'/>
           </div>
           <div className='WorkBoxHeader'>Project name</div>
         </button>
@@ -26,4 +26,4 @@ class Work extends Component {
     );
   }
 }
-export default Work;
+export default Mishna;

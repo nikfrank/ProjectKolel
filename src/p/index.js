@@ -1,11 +1,11 @@
 import About from './About';
 import Blog from './Blog';
 import Home from './Home';
-import Work from './Work';
+import Mishna from './Mishna';
 
 export {
   About,
   Blog,
   Home,
-  Work,
+  Mishna,
 };
