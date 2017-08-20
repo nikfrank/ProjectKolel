@@ -90,8 +90,10 @@ class HeaderMobile extends Component {
                 <MenuItem key={i}
                           primaryText={title}
                           style={menuItemStyle}
-                          href={'#' + path}/>
-              ) )
+                          href={'#' + path}
+                          className="menuItem"/>
+                
+              ))
           }
           
         </Drawer>
