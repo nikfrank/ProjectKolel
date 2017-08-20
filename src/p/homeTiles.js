@@ -34,7 +34,7 @@ export default [
   {
     img: bwQA,
     title: 'Review Q&A',
-    link: '/ReviewQ&A',
+    link: '/ReviewQA',
   },
   {
     img: bwFullreview,
@@ -100,7 +100,7 @@ export default [
   {
     img: 'images/grid-list/water-plant-821293_640.jpg',
     title: 'חידונים',
-    link: '/חידונים'',
+    link: '/חידונים',
   },
   {
     img: 'images/grid-list/water-plant-821293_640.jpg',

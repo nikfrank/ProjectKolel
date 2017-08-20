@@ -8,6 +8,8 @@ import MenuIcon from 'react-icons/lib/md/menu';
 import CloseMenuIcon from 'react-icons/lib/md/navigate-before';
 import OpenMenuIcon from 'react-icons/lib/md/navigate-next';
 
+import routes from './routes';
+
 const DRAWER_WIDTH = 225;
 
 const paperBarStyle = {
@@ -28,6 +30,8 @@ const menuItemStyle = {
   border: '2px outset gray',
 };
 
+  
+
 const menuItems = [
   { title: 'Home', href: '#/home' },
   { title: 'Sponsors & Donors', href: '#/about' },
@@ -37,7 +41,7 @@ const menuItems = [
   { title: 'Shulchan Aruch', href: '#/about' },
   { title: 'Lectures', href: '#/about' },
   { title: 'שיעורים בעברית', href: '#/about' },
-  { title: 'Oders', href: '#/about' },
+  { title: 'Borders', href: '#/about' },
   { title: 'Dafyomi Central', href: '#/about' },
   { title: 'Kollel Iyun Hadaf', href: '#/about' },
   { title: 'Feedback', href: '#/about' },
@@ -61,18 +65,18 @@ class HeaderMobile extends Component {
         {
           this.context.width > 800 ? null :          
           <RaisedButton
-              style={{
-                position: 'fixed',
-                zIndex: 1330,
-                left: 0,
-                top: 0,
-              }}
-              buttonStyle={{
-                ...menuItemStyle,
-                borderRight: 'none',
-                borderBottom: 'none',
-              }}
-              onTouchTap={this.handleToggle}>
+            style={{
+              position: 'fixed',
+              zIndex: 1330,
+              left: 0,
+              top: 0,
+            }}
+            buttonStyle={{
+              ...menuItemStyle,
+              borderRight: 'none',
+              borderBottom: 'none',
+            }}
+            onTouchTap={this.handleToggle}>
             
             <CloseMenuIcon style={{
               transition: 'all 1s ease',
@@ -99,18 +103,19 @@ class HeaderMobile extends Component {
           }
 
           {
-            menuItems.map((m, i)=> (
-              <MenuItem key={i}
-                        primaryText={m.title}
-                        style={menuItemStyle}
-                        href={m.href}/>
-            ) )
+
+              routes.map(({ path, title }, i)=> (
+                <MenuItem key={i}
+                          primaryText={title}
+                          style={menuItemStyle}
+                          href={'#' + path}/>
+              ) )
           }
           
         </Drawer>
       </div>
 
-    )
+            )
   }
 }
 HeaderMobile.contextTypes = {

@@ -9,15 +9,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import ResponsiveProvider from './ResponsiveProvider';
 import Layout from './Layout';
+import routes from  './routes';
 
-import {
-  Mishna,
-  About,
-  Home,
-  Blog,
-} from './p/'
-
-import './p/hometiles.js'
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -31,32 +24,12 @@ ReactDOM.render(
       <ResponsiveProvider>
         <Layout>
           <Switch>
-            <Route path='/blog' exact component={Blog}/>
-            <Route path='/' exact component={Home}/>
-            <Route path='/about' exact component={About}/>
-            <Route path='/' exact component={About}/>
-            <Route path='/about' exact component={About}/>
-            <Route path='/Mishna' exact component={Mishna}/>
-            <Route path='/Insights' exact component={Insights}/>
-            <Route path='/Background' exact component={Background}/>
-            <Route path='/RevoewQ&A' exact component={RevoewQ&A}/>
-            <Route path='/FullReview' exact component={FullReview}/>
-            <Route path='/EnglishCharts' exact component={EnglishCharts}/>
-            <Route path='/PointByPoint' exact component={PointByPoint}/>
-            <Route path='/Halacha' exact component={Halacha}/>
-            <Route path='/DailyQuiz' exact component={DailyQuiz}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/DaatYosef/HE' exact component={DaatYosefHE}/> 
-            <Route path='/Tavlaut' exact component={Tavlaut}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
-            <Route path='/Navigator' exact component={Navigator}/>
+            {
+              routes.map(({ path, component }) => (
+                <Route path={path} exact component={component}/>
+              ))
+            }
+
           </Switch>
         </Layout>
       </ResponsiveProvider>
