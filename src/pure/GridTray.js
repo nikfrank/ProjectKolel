@@ -43,7 +43,7 @@ export default ({ width, children, tiles, subheaderStyle={} }) => {
 
         {
           tiles.map(({ title, img, Icon, link }, i) => (
-            <a href={link} key={i}>
+            <a href={'#' + link} key={i}>
               <GridTile
                   title={title}
                   titleStyle={{ marginLeft: -16 }}
