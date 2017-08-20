@@ -19,6 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && pushstate-server build"
+    "server": "pushstate-server build",
+    "deploy": "git branch -D heroku && git checkout master && git checkout -b heroku && sed '/build/d' .gitignore && npm build && git add . && git commit -am 'build' && git push heroku heroku:master && git checkout master"
   }
 }
