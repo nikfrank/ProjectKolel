@@ -29,7 +29,7 @@ ReactDOM.render(
                 <Route path={path} exact component={component}/>
               ))
             }
-
+            
           </Switch>
         </Layout>
       </ResponsiveProvider>

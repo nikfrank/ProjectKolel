@@ -27,7 +27,7 @@ const Insights = ComingSoon;
 export default [
   {  
     title: 'Home',
-    path: '/home',
+    path: '/',
     component: Home,
   },
   {  
