@@ -30,24 +30,6 @@ const menuItemStyle = {
   border: '2px outset gray',
 };
 
-  
-
-const menuItems = [
-  { title: 'Home', href: '#/home' },
-  { title: 'Sponsors & Donors', href: '#/about' },
-  { title: 'Member\'s site', href: '#/about' },
-  { title: 'Talmud', href: '#/about' },
-  { title: 'Mishna', href: '#/about' },
-  { title: 'Shulchan Aruch', href: '#/about' },
-  { title: 'Lectures', href: '#/about' },
-  { title: 'שיעורים בעברית', href: '#/about' },
-  { title: 'Borders', href: '#/about' },
-  { title: 'Dafyomi Central', href: '#/about' },
-  { title: 'Kollel Iyun Hadaf', href: '#/about' },
-  { title: 'Feedback', href: '#/about' },
-  { title: 'Ask A Question on the Daf', href: '#/about'},
-];
-
 
 class HeaderMobile extends Component {
   constructor(props) {
