@@ -1,7 +1,9 @@
-body {
+li{
+  list-style: none;
+}
+  body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-
   background-image: url( './imgs/daftile.gif' );
 }

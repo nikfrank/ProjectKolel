@@ -7,20 +7,25 @@ import series from '../p/Mishna/Series';
 class BookTray extends Component{
   render(){
     return (
-      
       <div className='BookTray'>
+        <ul className='BookTray-Series'>
+          {
+            series.map(({title, id}) => (
+              <li key={id}>{title}</li>
+            ))
+          }
+        </ul>
         {
           series.map(({ title, books, id }) => (
-            <List key={id}>
-              <div className='BookTray-Series'>
-                <ListItem primaryText={title} />
-                {
-                  books.map(({ title }) =>
-                    <ListItem primaryText={title}  BookTray-Books/>
-                  )
-                }
-              </div>
-            </List>
+            <ul key={id} className='BookTray-Books'>
+              {
+                books.map(({ title }) => (
+                  <li className='BookTray-Book'>
+                    {title}
+                  </li>
+                ))
+              }
+            </ul>
           )) 
         }
       </div>

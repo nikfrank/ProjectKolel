@@ -1,6 +1,6 @@
 .BookTray {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: white;
   max-width: 90%;
   font-weight: 600;
@@ -8,19 +8,57 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-.BookTray-Series > div {
-  background-color: #99CCFF;
-  border-style: solid;
-  border-width: 1px;
+
+ul.BookTray-Series li{
+  background-color: #77aadd;
+  border: 1px solid black;
   border-top-width: 0;
+  padding: 5px 5px 5px 10px;
+  user-select:none;
 }
-.BookTray-Series > div:last-child {
-  background-color: #99CCFF;
+
+
+ul.BookTray-Series li:last-child {
   border-radius: 0 0 10px 10px;
+}
+
+ul.BookTray-Series li:first-child {
+  border-top-width: 1px;
+  border-radius: 10px 10px 0 0;
+}
+
+ul.BookTray-Series {
+  padding: 0;
+}
+
+ul.BookTray-Books {
+  padding: 0;
   
 }
-.BookTray-Series > div:first-child {
-  background-color: #88bbee;
-  border-radius: 10px 10px 0 0;
+
+ul.BookTray-Books li {
+  background-color: #99CCFF;
+  border: 1px solid black;
+  border-top-width: 0;
+  width: 100%;
+  padding: 5px 5px 5px 10px;
+  user-select:none;
+}
+
+ul.BookTray-Books li:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+ul.BookTray-Books li:first-child {
   border-top-width: 1px;
+  border-radius: 10px 10px 0 0;
+}
+
+.BookTray-Books li:hover {
+  background-color: #88bbee;
+  cursor: pointer;
+}
+.BookTray-Series li:hover {
+  background-color: #88bbee;
+  cursor: pointer;
 }

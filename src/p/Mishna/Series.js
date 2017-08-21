@@ -229,7 +229,7 @@ export default [
     ]
   }, {
     
-    title: 'Kodshim',
+    title: 'Taharos',
     id: 6,
     books: [
       {
