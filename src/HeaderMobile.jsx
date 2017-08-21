@@ -10,7 +10,8 @@ import OpenMenuIcon from 'react-icons/lib/md/navigate-next';
 
 import routes from './routes';
 
-import './HeaderMobile.css'
+import './HeaderMobile.css';
+
 const DRAWER_WIDTH = 225;
 
 const paperBarStyle = {
