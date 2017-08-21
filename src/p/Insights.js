@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import './Mishna.css'
-import BookTray from '../pure/BookTray';
-
+import MarqueeScroller from '../pure/MarqueeScroller';
 
 class Mishna extends Component {
   render() {
     return (
-      <div className="MishnaPage">
-        <BookTray />
+      <div className="InsightsPage">
+        <MarqueeScroller />
       </div>
     );
   }

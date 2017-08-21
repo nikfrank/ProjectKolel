@@ -9,6 +9,7 @@ import { GridList, GridTile } from 'material-ui/GridList';
 import Subheader from 'material-ui/Subheader';
 
 import GridTray from '../pure/GridTray';
+import MarqueeScroller from '../pure/MarqueeScroller';
 
 import homeTiles from './homeTiles';
 
@@ -33,16 +34,20 @@ class Home extends Component {
     
     return (
       <div>
-        <div style={{ display: 'flex',
-                      flexDirection:'row',
-                      justifyContent: 'space-around',
-                      flexWrap:'wrap'}}>
+        <div style={{
+          display: 'flex',
+          flexDirection:'row',
+          justifyContent: 'space-around',
+          flexWrap:'wrap'
+        }}>
+
+          <MarqueeScroller style={{ width: 150 }}/>
           <div style={{ 
             display: 'block',
             textAlign: 'center',
           }}>
             <img src={bannerImg} style={{ width: 'auto',
-                                          maxWidth: '80vw',
+                                          maxWidth: '70vw',
                                           height: '170px',}}/>
             <h3>The Internet Center for the Study of Talmud</h3>
             <i>brought to you by <a href="/">Kollel Iyun Hadaf</a></i>

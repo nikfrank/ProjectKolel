@@ -1,8 +1,8 @@
 import ComingSoon from './pure/ComingSoon';
 import Mishna from './p/Mishna';
 import Home from './p/Home';
+import Insights from './p/Insights';
 
-const Insight = ComingSoon;
 const Background = ComingSoon;
 const ReviewQA = ComingSoon;
 const FullReview = ComingSoon;
@@ -22,7 +22,7 @@ const YerushalamiMatchup = ComingSoon;
 const YerushalmiAudio = ComingSoon;
 const OurReplies = ComingSoon;
 const RevachLDaf = ComingSoon;
-const Insights = ComingSoon;
+
 
 export default [
   {  
