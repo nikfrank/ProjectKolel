@@ -6,8 +6,8 @@ class Mishna extends Component {
   render() {
     return (
       <div className="MishnaPage">
-        <BookTray/>
-        </div>
+        <BookTray />
+      </div>
     );
   }
 }
