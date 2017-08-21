@@ -2,18 +2,27 @@ import React, {Component} from 'react';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import './BookTray.css'
+import series from '../p/Mishna/Series';
 
 class BookTray extends Component{
   render(){
     return (
+      
       <div className='BookTray'>
-          <List>
-            <ListItem primaryText="Inbox" />
-            <ListItem primaryText="Starred"  />
-            <ListItem primaryText="Sent mail" />
-            <ListItem primaryText="Drafts" />
-            <ListItem primaryText="Inbox"  />
-          </List>
+        {
+          series.map(({ title, books, id }) => (
+            <List key={id}>
+              <div className='BookTray-Series'>
+                <ListItem primaryText={title} />
+                {
+                  books.map(({ title }) =>
+                    <ListItem primaryText={title}  BookTray-Books/>
+                  )
+                }
+              </div>
+            </List>
+          )) 
+        }
       </div>
     );
   }
