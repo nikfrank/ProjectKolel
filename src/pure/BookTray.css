@@ -1,6 +1,6 @@
 .BookTray {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
   max-width: 90%;
   font-weight: 600;
