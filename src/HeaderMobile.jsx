@@ -10,6 +10,7 @@ import OpenMenuIcon from 'react-icons/lib/md/navigate-next';
 
 import routes from './routes';
 
+import './HeaderMobile.css'
 const DRAWER_WIDTH = 225;
 
 const paperBarStyle = {
@@ -90,8 +91,7 @@ class HeaderMobile extends Component {
                 <MenuItem key={i}
                           primaryText={title}
                           style={menuItemStyle}
-                          href={'#' + path}
-                          className="menuItem"/>
+                          href={'#' + path}/>
                 
               ))
           }
