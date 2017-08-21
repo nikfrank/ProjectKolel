@@ -1,14 +1,31 @@
 import React, {Component} from 'react';
-import './Mishna.css'
-import MarqueeScroller from '../pure/MarqueeScroller';
 
-class Mishna extends Component {
+const pageCopy = {
+  en: 'blah blah blah',
+  he: 'בלה בלה בלה',
+};
+
+class Insights extends Component {
+  state = {
+    lang: 'en',
+    langs: ['he', 'en'],
+  }
+
+  toggleLang = ()=>{
+    this.setState({ lang: this.state.langs[
+      (
+        this.state.langs.indexOf(this.state.lang) +1
+      ) % this.state.langs.length
+    ] });
+  }
+  
   render() {
     return (
       <div className="InsightsPage">
-        <MarqueeScroller />
+        <button onClick={this.toggleLang}>Toggle</button>
+        <p> { pageCopy[this.state.lang] } </p>
       </div>
     );
   }
 }
-export default Mishna;
+export default Insights;

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import './Mishna.css'
 import MarqueeScroller from '../pure/MarqueeScroller';
 
-class Mishna extends Component {
+class RevachLDaf extends Component {
   render() {
     return (
       <div className="InsightsPage">
@@ -11,4 +10,4 @@ class Mishna extends Component {
     );
   }
 }
-export default Mishna;
+export default RevachLDaf;
