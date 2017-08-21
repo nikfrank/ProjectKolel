@@ -26,7 +26,7 @@ ReactDOM.render(
           <Switch>
             {
               routes.map(({ path, component }) => (
-                <Route path={path} exact component={component}/>
+                <Route key={path} path={path} exact component={component}/>
               ))
             }
             
