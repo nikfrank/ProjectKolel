@@ -1,0 +1,33 @@
+.MarqueeScroller {
+  font-size: 0.675em;
+  max-height: 300px;
+
+  overflow-y: hidden;
+
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px 15px 10px 0;
+
+  background-color: white;
+}
+
+@keyframes scroll-marquee {
+  0%   { transform: translateY( 300px ) }
+  100% { transform: translateY( -1800px ) }
+}
+
+.MarqueeScroller > div > div {
+  animation: scroll-marquee 35s infinite linear backwards;
+}
+
+.MarqueeScroller > div:hover > div {
+  animation-play-state: paused;
+}
+
+.MarqueeScroller a {
+  color: blue;
+}
+
+.MarqueeScroller a.active {
+  color: purple;
+}
