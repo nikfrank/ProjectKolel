@@ -2,6 +2,7 @@ import ComingSoon from './pure/ComingSoon';
 import Mishna from './p/Mishna';
 import Home from './p/Home';
 import Insights from './p/Insights';
+import RevachLDaf from './p/RevachLDaf';
 
 const Background = ComingSoon;
 const ReviewQA = ComingSoon;
@@ -11,7 +12,6 @@ const PointByPoint = ComingSoon;
 const Halacha = ComingSoon;
 const DailyQuiz = ComingSoon;
 const Tosfos = ComingSoon;
-const Revachldaf = ComingSoon;
 const Podcast = ComingSoon;
 const Navigator = ComingSoon;
 const YosefDaat = ComingSoon;
@@ -21,7 +21,6 @@ const Chidunim = ComingSoon;
 const YerushalamiMatchup = ComingSoon;
 const YerushalmiAudio = ComingSoon;
 const OurReplies = ComingSoon;
-const RevachLDaf = ComingSoon;
 
 
 export default [
